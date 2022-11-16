@@ -77,18 +77,24 @@ def main():
 	xc = int(input("Enter x coordinate of the centre "))
 	yc = int(input("Enter y coordinate of the centre "))
 	r = int(input("Enter length of radius "))
-	choice = int(input("Enter the required choice: 1. Midpoint circle algorithm 2. Polar circle generation algorithm 3. Non-Polar circle generation algorithm"))
+	choice = int(input("Enter the required choice:\n 1. Midpoint circle algorithm\n 2. Polar circle generation algorithm\n 3. Non-Polar circle generation algorithm\nEnter Choice:"))
 
-	glutCreateWindow("Circle")
-	init_display()
 	if choice == 1:
+		glutCreateWindow("Circle: Midpoint")
+		init_display()
 		glutDisplayFunc(midpoint_circle)
 	elif choice == 2:
+		glutCreateWindow("Circle: Polar")
+		init_display()
 		glutDisplayFunc(polar_circle)
 
 	elif choice == 3:
+		glutCreateWindow("Circle: Non Polar")
+		init_display()
 		glutDisplayFunc(nonpolar_circle)
 	else:
+		glutCreateWindow("Error")
+		init_display()
 		glutDisplayFunc(no_circle)
 		print("Invalid option chosen!")
 
